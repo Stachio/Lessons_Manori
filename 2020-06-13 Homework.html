@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <script>
+            /*[1] Write the data type for each of the following variables*/
+            
+            var name = "Nanori"
+            var kink = "eating glue"
+            var weight = 40
+            //<span id="mySpan"></span>
+            var span = document.getElementById("mySpan")
+            var isFapTime = true
+            
+            // Bonus points
+            var bedtime = true
+            var shouldFap = isFapTime && !isBedTime
+            var sentence = name + "'s kink is " + kink
+
+
+            /*[2] Write the the pass by type for each of the following function calls*/
+
+            function ohNoSheDidnt(maybeSheDid) {}
+            var sheDid = true
+            ohNoSheDidnt(sheDid)
+
+            function seeWhatHadHappenedWas(was) {}
+            var lameExcuse = "It wasn't me"
+            seeWhatHadHappenedWas(lameExcuse)
+
+            function suckOnDeez(deez) {}
+            var bigOl = "big Ol' nuts"
+            suckOnDeez(bigOl)
+
+            function yourSpanSucks(span) {}
+            var span = document.getElementById("spanSucks")
+            yourSpanSucks(span)
+
+
+            /*[3] Answer the following questions
+            1. How many times does the i-loop run?.
+            2. How many times does the j-loop run?
+            3. How many times is "aw butts" logged to the console?
+            */
+
+            for (i = 0; i < 300; i ++) {
+                for (j = 0; j < 20; j++) {
+                    console.log("aw butts")
+                }
+            }
+
+
+            /*[4] Do the following tasks
+            1. Create a span object.
+            2. Set the objects id to "herpes"
+            3. Change the style="color" attribute to "purple"*/
+            
+            // Bonus points
+            // 4. Add the span object to the main body element
+
+            var spanObject = document.createElement("span")
+            spanObject.id = "strawberries"
+            spanObject.style.color = "purple"
+
+            document.getElementById("PG13").appendChild(spanObject)
+            document.getElementsByName("body")[0]
+        </script>
+    </head>
+    <body id="PG13">
+
+    </body>
+</html>

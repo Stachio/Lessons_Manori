@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <script>
+            var matches = [
+                ['00', '01', '02'],
+                ['00', '10', '20'],
+                ['01', '11', '21'],
+                ['02', '12', '22'],
+                ['10', '11', '12'],
+                ['20', '21', '22'],
+                ['00', '11', '22'],
+                ['20', '11', '02']
+            ]
+
+            function Match() {
+                for (var index = 0; index < matches.length; index ++) {
+                    var line = matches[index]
+                    console.log(line)
+                    var matchSource = document.getElementById(line[0]).src
+                    console.log(matchSource)
+                    var match = true
+                    for (jndex = 1; jndex < line.length; jndex ++) {
+                        element = document.getElementById(line[jndex])
+                        console.log(element.src)
+                        if (!element.src || element.src != matchSource) {
+                            console.log('Do not compare')
+                            match = false
+                            break
+                        }
+                    }
+                    console.log(match)
+
+                    if (match) {
+                        console.log('game over')
+                        return true
+                    }
+                }
+
+                return false
+            }
+
+            var state = 'x'
+            var gameover = false
+            function play(element) {
+                if (gameover || element.src) {
+                    return
+                }
+
+                var last = state
+                if (state == 'x') {
+                    element.src = 'cross.png'
+                    state = 'o'
+                } else if (state == 'o') {
+                    element.src = 'circle.png'
+                    state = 'x'
+                }
+
+                if (Match()) {
+                    gameover = true
+                    alert(last + ' wins')
+                }
+            }
+        </script>
+        <style>
+            img {
+                width: 200;
+                height: 200;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td><img id="00" onclick='play(this)'></td>
+                <td><img id="01" onclick='play(this)'></td>
+                <td><img id="02" onclick='play(this)'></td>
+            </tr>
+            <tr>
+                <td><img id="10" onclick='play(this)'></td>
+                <td><img id="11" onclick='play(this)'></td>
+                <td><img id="12" onclick='play(this)'></td>
+            </tr>
+            <tr>
+                <td><img id="20" onclick='play(this)'></td>
+                <td><img id="21" onclick='play(this)'></td>
+                <td><img id="22" onclick='play(this)'></td>
+            </tr>
+        </table>
+    </body>
+</html>
+
+

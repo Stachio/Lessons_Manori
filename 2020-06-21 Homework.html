@@ -1,0 +1,189 @@
+<html>
+    <head>
+        <script>
+            /*[1] What is the data type of the following variables?*/
+            
+            /* Current known data types
+             * string
+             * number
+             * object
+             * array
+             */
+
+            var span = document.createElement('span')
+
+            /*
+            var span = {
+                var id = ''
+                var innerHTML = ''
+                var style = {
+                    var color = 'red'
+                }
+            }
+            */
+
+            var htmlObject = document.createElement('div')
+            var id = htmlObject.id
+            htmlObject.style.color = 'red'
+            console.log(typeof(id))
+
+            var children = span.children
+            var children = [document.createElement('tr'), document.createElement('tr'), document.createElement('tr')]
+
+            /*
+            var children = tbody.children
+            var tr = children[0]
+            var td = tr.children[0]
+            */
+            /*
+            <table>
+                <tbody>
+                    <tr></tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                </tbody>
+            </table>
+            */
+            var child = children[0]
+
+            var tagName = span.tagName
+
+            // Bonus points
+            // A data type you know of but we haven't classified as a data type yet
+            var appendChild = span.appendChild
+
+            var button = document.createElement('button')
+            var appendChild = span.appendChild
+            //appendChild(button)
+
+
+            /*[2] Write the data type returned by the following functions.*/
+
+            function freeTheWhales() {
+                return "Yeah right"
+            }
+
+            function thereIsNoTimeLeft() {
+                var minutes = 3
+                return minutes
+            }
+
+            function dontHateMe() {
+                var reason = ["I'm", 'doing', 'this', 'for', 'you']
+
+                return
+                return reason
+
+                return 'bois'
+                return 'no'
+                return document.createElement('span') 
+            }
+            
+            function getElementByIdNanori(victim, message) {
+                return document.getElementById('Nanori')
+            }
+
+            var hello = 'hey there'
+            console.log(hello)
+            console.log('hey there')
+
+            var nanoriObject = getElementByIdNanori('Rokasu', 'your tits are mine')
+            console.log(dontHateMe())
+
+            var testicles = 'my ' + dontHateMe() + ' hurts'
+
+
+            /* [3]
+             * a. Write the length of the following arrays.
+             * b. Write the 3rd element in each array (index = 2)
+             * c. Add another element to each array
+             */
+
+            var array1 = ['one', 'two', 'three']
+            var array2 = ['four', 'five', 'six', 'seven']
+            var array3 = [3, 7, 92, 45, 9073, 28, 67]
+
+            var third = array1[array1.length - 1]
+
+            // Bonus points
+            // a. What is the array's length after the for loop?
+            // b. What is the last element (array.length - 1) in the array?
+            // c. What is the 10th element in the array (index = 9)?
+            // d. How can you reverse the array with a new array and a for loop?
+            var array = []
+            var alphabet = 'abcdefghijklmnopqrstuvwxyz'
+            for (var index = 0; index < alphabet.length; index ++) {
+                array.push(alphabet[index])
+            }
+            console.log(array) //length = 10
+
+            var third = array[2]
+            var twentysixth = array[25]
+            console.log(third)
+
+            console.log('Start')
+            var revArray = []
+            for (var i = array.length - 1; i >= 0; i --) {
+                  //console.log(array[i])
+                revArray.push(array[i])
+            }
+            /*
+                revArray = []
+                revArray = [
+                    i = 25, (array[i] = z)
+                    i = 24, (array[i] = y)
+                    i = 23, (array[i] = x)
+                    6,
+                    5,
+                    4,
+                    3,
+                    2,
+                    1,
+                    0,
+                ]
+            */
+            /*
+                array = [
+                    100,
+                    101,
+                    102,
+                    103,
+                    104,
+                    105,
+                    106,
+                    107,
+                    108,
+                    109,
+                    110,
+                ]
+            */
+            console.log(revArray)
+            console.log('Finish')
+        </script>
+    </head>
+    <body>
+        <div id="terribleParent" style="color:red"></div>
+        <script>
+            /* State whether or not the javascript created HTML object will be visible on the page*/
+            var tr = document.createElement('tr')
+            var td = document.createElement('td')
+            tr.appendChild(td) //Visible or not?
+
+            var div = document.getElementById('terribleParent')
+            var img = document.createElement('img')
+            img.source = 'blueberries.jpg'
+            div.appendChild(img) //Visible or not?
+
+            var ul = document.createElement('ul')
+            var li = document.createElement('li')
+            ul.appendChild(li) //Visible or not?
+        </script>
+    </body>
+</html>

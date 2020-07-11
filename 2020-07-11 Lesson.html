@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <script>
+            var xml = `<blogitems>
+                            <blogitem>
+                                <header>This is a header</header>
+                                <text>This is text</text>
+                            </blogitem>
+                            <blogitem>
+                                <header>This is a header</header>
+                                <text>This is text</text>
+                            </blogitem>
+                            <blogitem>
+                                <header>This is a header</header>
+                                <text>This is text</text>
+                            </blogitem>
+                            <blogitem>
+                                <header>This is a header</header>
+                                <text>This is text</text>
+                            </blogitem>
+                            <blogitem>
+                                <header>This is a header</header>
+                                <text>This is text</text>
+                            </blogitem>
+                            <blogitem>
+                                <header>This is a header</header>
+                                <text>This is text</text>
+                            </blogitem>
+                            <blogitem>
+                                <header>This is a header</header>
+                                <text>This is text</text>
+                            </blogitem>
+                            <blogitem>
+                                <header>This is a header</header>
+                                <text>This is text</text>
+                            </blogitem>
+                            <blogitem>
+                                <header>This is a header</header>
+                                <text>This is text</text>
+                            </blogitem>
+                            <blogitem>
+                                <header>This is a header</header>
+                                <text>This is text</text>
+                            </blogitem>
+                        </blogitems>`
+        </script>
+    </head>
+    <body>
+        <div id="blogmain" style="width:50%;margin-top:1%;margin-left:auto;margin-right:auto">
+            <div style="font-size:xx-large;font-weight:bold;color:pink;text-align:center">Hannah is the fucking worst</div>
+            <br>
+            <div style="background-color:pink">
+                <img src="Greatest.png" style="border: 1px solid black">
+                <h1>BLOG HEADER</h1>
+                <div>BLOG TEXT</div>
+            </div>
+            <script>
+                headers = [
+                    'I loev my job',
+                    'Oh boy today I went back to SW'
+                ]
+
+                text = [
+                    'Sike I\'m just kidding that shit sucks.  Hate my job.  It\'s not as bad as Haleh\'s but it\'s pretty sheit.',
+                    'It was a fuckin mistake.  I hate my life and I hate children.'
+                ]
+
+                var blogmain = document.getElementById("blogmain")
+                /*
+                <br>
+                <div>
+                    <img src="Greatest.png" style="border: 1px solid black">
+                    <h1>BLOG HEADER</h1>
+                    <div>BLOG TEXT</div>
+                </div>
+                */
+
+                function MakeBlogPost(header, blogText) {
+                    var br = document.createElement('br')
+                    var div = document.createElement('div')
+                    div.style.backgroundColor = 'pink'
+                    var img = document.createElement('img')
+                    img.src = 'Greatest.png'
+                    img.style.border = '1px solid black'
+                    var h1 = document.createElement('h1')
+                    h1.innerHTML = header
+                    h1.style.border = '1px solid black'
+                    var innerDiv = document.createElement('div')
+                    innerDiv.innerHTML = blogText
+
+                    div.appendChild(img)
+                    div.appendChild(h1)
+                    div.appendChild(innerDiv)
+
+                    blogmain.appendChild(br)
+                    blogmain.appendChild(div)
+                }
+
+                MakeBlogPost('Haleh is a butt', 'Today she made me eat ice cream cause she a ho')
+                MakeBlogPost('Reuben is the greatest', 'Cause he is')
+                MakeBlogPost('Blog A', 'Blog text')
+
+                for (var i = 0; i < headers.length; i++) {
+                    MakeBlogPost(headers[i], text[i])
+                }
+                MakeBlogPost()
+                MakeBlogPost()
+                MakeBlogPost()
+                MakeBlogPost()
+
+                function httpGet(theUrl)
+                {
+                    var xmlHttp = new XMLHttpRequest();
+                    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+                    xmlHttp.send( null );
+                    return xmlHttp.responseText;
+                }
+
+                //var data = httpGet('2020-07-11 Lesson.html')
+                //console.log(data)
+
+                var parser = new DOMParser()
+                var xmlDoc = parser.parseFromString(xml)
+            </script>
+        </div>
+    </body>
+    <script>
+
+    </script>
+</html>

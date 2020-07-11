@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <script>
+            /*[1] Write a for loop to find the index of 'Female' in the titans array.*/
+            //  findIndex = 0
+            //  for...
+            //      if...
+            //  console.log(findIndex)
+
+            var numbers = []
+            for (var index = 0; index < 5000000; index++) {
+                numbers.push(index)
+            }
+
+            for (var index = 0; index < numbers.length; index ++) {
+                if (numbers[index] == 4999999) {
+                    console.log('Found')
+                }
+            }
+
+            var titans = [
+                'Founding',
+                'Armored',
+                'Attack',
+                'Colossus',
+                'Beast',
+                'Female',
+                'Jaw',
+                'Cart',
+                'War Hammer'
+            ]
+
+            var titanInfos = [
+                'Can control other titans',
+                'Is a bitch',
+                'Super tough',
+                'Attacks stuff',
+                'Really freaking big',
+                'Ugly as fuck',
+                'BDSM',
+                'Presumably/Is female',
+                'Haleh\'s favorite'
+            ]
+
+            console.log(titans)
+            //console.log(titans[0])
+
+            /*
+            for (var index = 0; index < titans.length; index ++) {
+                var titanName = titans[index] // -> 'Founding'
+                var titanInfo = titanInfos[index]
+                console.log(titanName + ': ' + titanInfo)
+            }
+            */
+
+            for (var index = 0; index < titans.length; index ++) {
+                if (titans[index] == 'Female') {
+                    console.log(index) //console.log(index + ': ' + titans[index])
+                }
+            }
+            
+            // Bonus points: Convert your answer to a function that returns the findIndex of any given titan.
+            //  function findTitan(titans, thisTitan) {
+            //      findIndex = 0
+            //      ...(logic)
+            //      return findIndex
+
+            function FindTitan(array, titanName) {
+                for (var index = 0; index < array.length; index ++) {
+                    if (array[index] == titanName) {
+                        return index
+                        //console.log(index) //console.log(index + ': ' + array[index])
+                    }
+                }
+            }
+
+            index = FindTitan(titans, 'Jaw')
+            //passing into FindTitans (titans, 'Female')
+            //var array = titans
+            //var titanName = 'Female'
+            console.log(index + ': ' + titans[index])
+
+            index = FindTitan(titans, 'Colossus')
+            console.log(index + ': ' + titans[index])
+
+            
+            /*[2] Write a function that prints a given message to the console. (console.log).*/
+            //  function printToConsole(message)
+            //      ...(logic)
+
+            
+            /*[3]
+                a. Write a for loop to find the index of your least favorite titan.
+                b. Change your code to create a new array with your least favorite titan removed. 
+            */
+
+
+
+            /* 3.b guideline:
+                var leastFavorite = 'Cart'
+                var noShitTitans = []
+                for ...
+                    if...
+                        noShitTitans.push(...)
+                console.log(noShitTitans)
+            */
+
+
+            /*[4]
+                a. Define an array with the names of all the titan weilders in season one.
+                b. Align the character names with the titan array (IE: characters[0] = 'Eren' because titans[0] = 'Founding' and Eren is the founding titan).
+                c. Write a for loop to print the titan name and character name together.
+            */
+
+            for (var i = 0; i < titans.length; i++) {
+                //for (var j = 0; j < titanInfos.length; j++) {
+                    console.log(titans[i] + " : " + titanInfos[i])
+                //}
+            }
+
+            /* 4.c guideline:
+                titans = [...]
+                characters = [...]
+                for ...
+                    console.log(...)
+            */
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

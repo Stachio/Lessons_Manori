@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <script>
+            // Named called bustSizeReport
+            // Does it have parameters? Naw
+            // All cose within bustSizeReport is now associated with bustSizeReport()
+
+            function bustSizeReport() {
+                console.log('Damn my tiddies is ' + bustsize + ' huge')
+            }
+
+            // talkaboutme:host
+            // talkaboutme;job
+            function TalkAboutMe(host, job) {
+                console.log('Hi my name is ' + host)
+                console.log('I am a ' + job)
+
+                host = 'Reuben'
+                job = 'being awesome'
+                //bustSizeReport()
+            }
+
+            function ChangeJob(job) {
+                if (job == 'Criminal Mastermind') {
+                    return 'Janitor'
+                } else if (job == 'Janitor') {
+                    return 'School Girl'
+                } else if (job == 'School Girl') {
+                    return 'Criminal Mastermind'
+                }
+            }
+
+            // main...
+            // main:host
+            // main:job
+            // main:bustsize
+            function main() {
+                var host = 'Haleh'
+                var job = 'Criminal Mastermind'
+                var bustsize = '30DD'
+
+                // PRIMARY DATA TYPES -- PASS BY VALUE
+                // String
+                // Number
+                // Boolean
+
+                
+
+                return
+
+                for (var i = 0; i < 10; i ++) {
+                    console.log('Enter talkaboutme')
+                    TalkAboutMe(host, job)
+                    //Pass by reference
+                    //Pass by value
+                    console.log('Left talkaboutme')
+
+                    job = ChangeJob(job)
+                }
+                
+
+                console.log('Someone asshole changed host to ' + host)
+                console.log('And the job is now ' + job)
+
+                // Bottom line
+            }
+
+            console.log('Enter main')
+            main()
+            console.log('Left main')
+
+            function changeElement(element) {
+                element = 'SIKE IM NOT AN OBJECT ANYMORE'
+                element.innerHTML = 'Haleh is a butt'
+            }
+
+            function buttonClick() {
+                // ELEMENT IS AN OBJECT
+                var element = document.getElementById('butts')
+                var element2 = document.getElementById('notbutts')
+                console.log(typeof element)
+                var test = 'THSI IS A TEST'
+                console.log(typeof test)
+                var test2 = 42
+                console.log(typeof test2)
+                var test3 = true
+                console.log(typeof test3)
+
+                //ASK FOR STRING
+                var str = 'Haleh is the best'
+                // COMPUTER: OK BUD
+
+
+
+                // PASS BY REFERENCE
+                console.log('innerHTML ' + element.innerHTML)
+                console.log(typeof element.innerHTML)
+                changeElement(element)
+                changeElement(element2)
+                console.log('innerHTML ' + element.innerHTML)
+            }
+
+            function clickHere() {
+                var peach = document.getElementById('peach')
+                var plum = document.getElementById('plum')
+
+                changeInnerHTML(peach, 'peach cobbler')
+                changeInnerHTML(plum, 'plum blossum')
+            }
+
+            function changeInnerHTML(element, text) {
+                element.innerHTML = text
+                element.style.color = 'blue'
+                element.style.fontSize = 'x-large'
+            }
+
+        </script>
+    </head>
+    <body>
+        <span id="peach" style="color:green">peach</span>
+        <br>
+        <span id="plum" style="color:green">plum</span>
+        <br>
+        <input type="button" onclick="clickHere()" value="Click Me"></input>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <script>
+            var numbers = [
+                35,     //index = 0
+                98,     //index = 1
+                7,      //index = 2
+                604,    //index = 3
+                73,     //index = 4
+                14,
+                784902,
+                504,
+                52,
+                9032137,
+                3,
+                6,
+                5,
+                4,
+                1,
+            ]
+
+            var highestIndex = 0
+            for (var index = 0; index < numbers.length; index ++) {
+                if (numbers[index] > numbers[highestIndex]) {
+                    highestIndex = index
+                }
+            }
+
+            var lowestIndex = 0
+            for (var index = 0; index < numbers.length; index ++) {
+                if (numbers[index] < numbers[lowestIndex]) {
+                    lowestIndex = index
+                }
+            }
+
+            //numbers.sort()
+            //console.log(numbers)
+
+            console.log("index: " + lowestIndex + ", value: " + numbers[lowestIndex])
+
+
+            /* index, numbers[index], PrehighestIndex, numbers[highestIndex], PostHighestIndex, numbers[PostHighestIndex]
+                nil       nil           0
+                0         35            0               35                      0                   35
+                1           98          0               35                      1                   98
+                2           7           1               98                      1                   98
+                3           604         1               98                      3                   604
+                4           73          3               604                     3                   604
+                5           14          3               604                     3                   604
+                6           784902      3               604                     6                   784902
+
+            */
+
+            console.log("index: " + highestIndex + ", value: " + numbers[highestIndex])
+
+            var sortArray = []
+            for (var index = 0; index < numbers.length; index ++) {
+                var lowestIndex = 0
+                for (var jndex = index; jndex < numbers.length; jndex ++) {
+                    if (numbers[jndex] < numbers[lowestIndex]) {
+                        lowestIndex = jndex
+                    }
+                }
+                console.log("index[" + index + "]: " + numbers[lowestIndex])
+
+                console.log("swapping " + index + " and " + jndex)
+                var swap = numbers[lowestIndex]
+                numbers[lowestIndex] = numbers[index]
+                numbers[index] = swap
+
+                sortArray.push(numbers[lowestIndex])
+            }
+
+            console.log(numbers)
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

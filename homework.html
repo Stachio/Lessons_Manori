@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <script>
+            /*
+             1. Create a button that prints "n00ds" to the console
+            */
+
+            function myFunction() {
+                document.getElementById("whatever").innerHTML = "herpes"
+            }
+
+            /*
+
+             2. Define a variable called fruit and set it to the literal string "apple"
+            
+            */
+
+            var fruit = "apple"
+
+            /*
+
+             3. Define an array called fruits and set it to several different fruit.  Print the array to the console
+
+                Bonus Points: After the array is defined, add another fruit to the array
+            */
+
+            var fruits = ["steak", "bees", "general tsao"]
+
+            console.log(fruits[0])
+
+            console.log(fruits + "avacado")
+
+            /*
+
+             4. Create a function called Nanori that has the parameters (victim, message).  Write the parameters to the console.
+
+            */
+
+            function Nanori(victim,message) {
+                console.log(victim + " " + message)
+                console.log(message)
+            }
+
+            Nanori("Reuben", "You're gonna die")
+
+            /*
+
+             5. Create a function that has the parameters (element, text).  The element data type is an HTML object.  Change the element's innerHTML to text
+
+            */
+
+
+
+
+
+
+            /*
+
+             6. Use for loops to create two arrays of numbers.  The first array is from 1 to 50.  The second array is from 51 to 100.
+
+                Bonus points: Add the elements in the second array to the first array
+            */
+
+            var array1 = [] // Numbers 1-50 in it
+            var array2 = [] // Number 51-100
+
+            //array1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,'...',50]
+            //console.log(array1)
+
+            for (var index = 1; index < 51; index ++) {
+                array1.push(index)
+            }
+
+            console.log(array1)
+
+            for (var index = 51; index < 101; index ++) {
+                array2.push(index)
+            }
+
+            console.log(array2)
+
+            for (var index = 0; index < 50; index ++) {
+                array2.push(array1[index])
+            }
+
+            console.log(array2)
+
+            // index = 0 (1 REP)
+            // index = 1 -> index ++
+            // index = 2 -> index ++
+            // ...
+            // index = array2.length - 1 = 49
+
+            /*
+            var rows = 50
+            var col = 100
+            for (var i = 0;i < rows; i++) {
+                for (var j = 0; j < col; j++) {
+                    console.log(i + j)
+                }
+            }
+            */
+
+            var fruit = ["apple", "cheese", "red"]
+            console.log(fruit+"testicles")
+        </script>
+    </head>
+    <body>
+        <button name="touchMyDick" onclick="console.log('herpes')">Suck my</button>
+        <p id="whatever">Blueberries are delicious</p>
+        <script>
+            function Watermelon(element, text) {
+                element.innerHTML = text
+            }
+
+            Watermelon(document.getElementById('whatever'), "But they're not available in Iran")
+        </script>
+    </body>
+</html>

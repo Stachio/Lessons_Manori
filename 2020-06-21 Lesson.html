@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <script>
+        
+        </script>
+        <style>
+            td {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <table id='tableID' style="border: 1px solid black;">
+            <tbody id='tbodyID'>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+
+            function getElementsByTagName(element /*HTMLOBJECT*/, tagName /*STRING*/) {
+                // Empty array so we can fill it
+                var elements = []
+
+                /*
+                element.children -> [
+                    HTMLOBJECT(TR)
+                    HTMLOBJECT(TR)
+                    HTMLOBJECT(TR)
+                    HTMLOBJECT(TR)
+                    HTMLOBJECT(TR)
+                ]
+                */
+
+                //var children = element.children
+                for (var index = 0; index < element.children.length; index ++) {
+                    //var child = element.children[index]
+                    if (element.children[index].tagName == tagName) {
+                        elements.push(element.children[index])
+                    }
+                }
+
+                return elements
+            }
+
+            var tbody = document.getElementById('tbodyID')
+            var tds = tbody.getElementsByTagName('td')
+            // trs -> [HTMLOBJECT(TR)......................]
+
+            for (index = 0; index < tds.length; index ++) {
+                tds[index].innerHTML = index
+            }
+
+            //var table = document.getElementsByTagName('table')[0]
+            //var trs = table.getElementsByTagName('tr')
+        </script>
+    </body>
+</html>

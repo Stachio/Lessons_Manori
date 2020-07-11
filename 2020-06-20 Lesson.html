@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script>
+            // Arrays
+
+            var myArray = ['blueberries', 'banana', 'mango', 'cucumber', 'pickle', 'olive', 'celery', 'everything', 'noodles', 'tempura fried sushi', 'cheeze its', 'Reuben\'s liver', 'cream corn', 'steak', 'french fries', 'grilled chicken', 'the blood of a hundred virgins']
+
+            var monsterArray = ['abcdefg', 54, false, document.creatElement('td')]
+
+            console.log(myArray)
+        </script>
+    </head>
+    <body>
+        <span>My List</span>
+        <br>
+        <ul id="changeMe">
+            <li>Hey this is a list</li>
+        </ul>
+        <script>
+            var ulObject = document.getElementById("changeMe")
+
+            for (var index = 0; index < myArray.length; index ++) {
+                var liObject = document.createElement("li")
+                liObject.innerHTML = myArray[index]
+                ulObject.appendChild(liObject)
+            }
+            
+            /*
+            var liObject = document.createElement("li")
+            liObject.innerHTML = myArray[1]
+            ulObject.appendChild(liObject)
+
+            var liObject = document.createElement("li")
+            liObject.innerHTML = myArray[2]
+            ulObject.appendChild(liObject)
+
+            var liObject = document.createElement("li")
+            liObject.innerHTML = myArray[3]
+            ulObject.appendChild(liObject)
+
+            var liObject = document.createElement("li")
+            liObject.innerHTML = myArray[4]
+            ulObject.appendChild(liObject)
+
+            var liObject = document.createElement("li")
+            liObject.innerHTML = myArray[5]
+            ulObject.appendChild(liObject)
+            */
+        </script>
+    </body>
+</html>

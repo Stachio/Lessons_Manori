@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <style>
+            #grid {
+                border-collapse: collapse;
+                border: 1px solid black;
+            }
+            #grid tr {
+                border: 1px solid black;
+            }
+            #grid td {
+                border: 1px solid black;
+                width: 9px;
+                height: 9px;
+                padding: 0;
+                margin: 0;
+            }
+        </style>
+        <script>
+            var rows = 100
+            var cols = 100
+
+            function Initialize() {
+                var tbody = document.createElement('tbody')
+
+                for (var index = 0; index < rows; index = index + 1) {
+                    var tr = document.createElement('tr')
+
+                    for (var jndex = 0; jndex < cols; jndex ++) {
+                        var td = document.createElement('td')
+                        td.id = index + ',' + jndex
+                        td.onmouseover = function(event) {
+                            var td = event.target
+                            var split = td.id.split(',')
+                            console.log(split)
+                        }
+
+                        //var tbody = REFERENCE## -> OBJECT(TBODY)
+                        //var tr = REFERENCE## -> OBJECT(TR)
+                        //var td = REFERENCE## -> OBJECT(TD)
+
+                        tr.appendChild(td)
+                    }
+
+                    tbody.appendChild(tr)
+                }
+
+                document.getElementById('initButton').remove()
+                var gridTable = document.getElementById('grid')
+                // gridTable = REFERENCE## -> OBJECT()
+                gridTable.appendChild(tbody)
+
+                tbody.getElementsByTagName('tr')[0].getElementsByTagName('td')[0].onmouseover = function() { alert('Hey there') }
+            }
+
+            function Test() {
+                console.log('test')
+            }
+        </script>
+    </head>
+    <body>
+        <div style="width:100%;height:100%;display:flex;justify-content:center;align-items:center;flex-direction:column;">
+            <table id="grid"></table>
+            <input id="initButton" type="button" value="Initialize" onclick="Initialize()">
+        </div>
+
+        <table>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+        </table>
+
+        <tbody style="color:blue"></tbody>
+        
+        
+        <tr></tr>
+        <td></td>
+
+
+
+        <tr>
+            <td>COLUMN1</td><td>COL2</td><td>COL3</td>
+        </tr>
+
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td>
+        </tr>
+    </body>
+</html>
