@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <script>
+            function MakePerson(firstName, lastName, age, eyeColor, attributes, weapon) {
+                var person = {
+                    firstName: firstName,
+                    lastName: lastName,
+                    age: age,
+                    eyeColor: eyeColor,
+                    attributes: attributes,
+                    weapon: weapon,
+                    inDungeon: false
+                }
+                
+                return person
+            }
+
+            var veegil = Make("v", "Sparda", 2000, 'blue', ['Sexy AF', 'Puppet Master', 'I don\'t know' ], 'Reading')
+
+            var vergil = Make("v", "Sparda", 2000, 'blue', ['White hair', 'Sexy AF', 'Fast', 'I don\'t know' ], 'Yamata')
+
+
+            var person = {
+                firstName: "John",
+                lastName: "Doe",
+                age: 50,
+                eyeColor: "blue"
+            };
+
+            /*var person2 = {
+                firstlyName: "Reuben",
+                lastNames: "Butts",
+                aget: "Old as shit",
+                eyeColorz: "brown"
+            }*/
+
+            var reuben = MakePerson("Reuben", "Butts", "Old as shit", "brown")
+            var person3 = MakePerson("Kenji", "Harima", "Immature", "brown")
+            var person4 = MakePerson("Pepsi", "Cola", "princess", "brownyellow")
+            var person5 = MakePerson("Haleh", "DucksSick", "Almost 13", "darkbrown")
+            var person6 = MakePerson("Hannibal", "Daddy", 5, "brown")
+            var person7 = MakePerson("Quizzical", "Gross", 15, "blueish")
+
+            var people = [
+                person,
+                reuben,
+                person3,
+                person4,
+                person4
+            ]
+
+            function PutInDungeon(person) {
+                person.inDungeon = true
+            }
+
+            PutInDungeon(reuben)
+            PutInDungeon(person3)
+
+            //console.log(person.firstName + " " + person.lastName + " " + person.age + " " + person.eyeColor)
+            //console.log(person2.firstName + " " + person2.lastName + " " + person2.age + " " + person2.eyeColor)
+            //console.log(person3.firstName + " " + person3.lastName + " " + person3.age + " " + person3.eyeColor)
+
+            for (var index = 0; index < people.length; index ++) {
+                var human = people[index]
+
+                if (human.inDungeon) {
+                    console.log(human.firstName + " " + human.lastName + " is in the rape dungeon")
+                }
+                //console.log(human.firstName + " " + human.lastName + " " + human.age + " " + human.eyeColor)
+            }
+
+            firstNames = ["John", "Haleh"]
+            lastNames = ["Doe", "Buttfaec"]
+            ages = []
+
+            //console.log(person.firstName)
+        </script>
+    </head>
+    <body>
+    </body>
+    <script>
+
+    </script>
+</html>
