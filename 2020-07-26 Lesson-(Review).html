@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <script>
+            /* [1] Create a weapon object
+                a. Name
+                b. Damage
+            */
+
+            weapon = {
+                Name: "",
+                Damage: ""
+            }
+
+            
+            /* [2] Create a Player object
+                a. Name
+                b. Weapon // Set to null for now
+                c. Health // Set to 100
+            */
+
+            player = {
+                Name: "",
+                Weapon: null,
+                Health: 100
+            }
+
+            /* [3] Create a MakeWeapon function
+                knife = MakeWeapon("Knife", 30)
+                bazooka = MakeWeapon("Bazooka", 100)
+            */
+
+            function MakeWeapon(name, damage) {
+                return {
+                    Name: name,
+                    Damage: damage,
+                }
+            }
+
+            knife = MakeWeapon("Knife", 30)
+            bazooka = MakeWeapon("Bazooka", 100)
+
+            console.log(knife)
+            console.log(bazooka)
+
+            /* [4] Create a Nanori player object
+                a. Set nanori.Weapon to a weapon created by the MakeWeapon function
+
+                Ex: nanori.Weapon = MakeWeapon("Knife", 30)
+            */
+
+            nanori = {
+                Name: "Nanori",
+                Weapon: knife,
+                Health: 100
+            }
+
+            console.log(nanori)
+
+            /* [5] Create a DoDamage function.  The parameters are (playerA, playerB)
+                a. Print to the console "[playerA.name] damages [playerB.name] for [playerA.Weapon.Damage] with a [playerA.Weapon.Name]"
+                b. Reduce playerB's health by playerA.Weapon.Damage // playerB.health = playerB.health - playerA.Weapon.Damage
+                c. Print to the console "[playerB.name]'s health: [playerB.health]"
+
+                Rokasu = MakePerson("Rokasu", null, 100)
+                Ex: DoDamage(Nanori, Rokasu)
+            */
+
+            function DoDamage(playerA, playerB) {
+                var message = playerA.Name + " damage " + playerB.Name + " for " + playerA.Weapon.Damage + " with a " + playerA.Weapon.Name
+                var messageArray = [
+                    playerA.Name,
+                   "damages",
+                   playerB.Name,
+                   "for",
+                   playerA.Weapon.Damage,
+                   "damage with a",
+                   playerA.Weapon.Name 
+                ]
+                console.log(messageArray.join(' '))
+            }
+
+            rokasu = {
+                Name:"Rokasu",
+                Weapon:null,
+                Health:100
+            }
+
+            DoDamage(nanori, rokasu)
+
+            function myCallback() {
+                knife.Damage = 50
+                console.log(nanori)
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="myCallback()">Change</button>
+    </body>
+    <script>
+
+    </script>
+</html>

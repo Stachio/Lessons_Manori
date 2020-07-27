@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script>
+            var username = 'Nanori'
+
+            function textEnter(event, caller) {
+                if (event.which != 13 && event.keyCode != 13) {
+                    return
+                }
+
+                console.log(caller.value)
+
+                var chatbox = document.getElementById("chatbox")
+                var div = document.createElement('div')
+                div.innerHTML = username + ': ' + caller.value
+                caller.value = ""
+
+                chatbox.appendChild(div)
+            }
+        </script>
+    </head>
+    <body style="background-color:#26657c;">
+        <div style="width:80%;margin-top:5%;margin-left:auto;margin-right:auto;background-color: grey;">
+            <span id="chatbox"><div>Your messages here</div></span>
+            <div style="background-color: #26657c"><br></div>
+            <input type="text" style="width:100%" onkeypress="textEnter(event, this)">
+        </div>
+    </body>
+</html>
