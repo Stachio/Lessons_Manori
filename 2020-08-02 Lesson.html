@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <script>
+            //dictionary/map
+
+            var myMap = {
+                name: "value",
+                name2: "value2",
+                name3: "value3",
+            }
+
+            function MakePerson(name, age, coolFactor) {
+                return {
+                    Name: name,
+                    Age: age,
+                    CoolFactor: coolFactor,
+                }
+            }
+
+            /*
+            function findPerson(peopleArray, name) {
+                for (var index = 0; index < peopleArray.length)
+                if (peopleArray[index].Name == name)
+            }
+            */
+
+            var peopleArray = [
+                MakePerson("Rokasu", 32, 9000000000),
+                MakePerson("Nanori", 8, 14),
+                MakePerson("Pepsi", 1.2, -400),
+                MakePerson("Jesus", 1300000, 0),
+            ]
+
+            console.log(myMap["name"])
+
+            var people = {
+                Rokasu: MakePerson("Rokasu", 32, 9000000000),
+                Nanori: MakePerson("Nanori", 8, 14),
+                Pepsi: MakePerson("Pepsi", 1.2, -400),
+                Jesus: MakePerson("Jesus", 1300000, 0),
+            }
+
+            /*
+            for (var name in people) {
+                console.log(name)
+                console.log(people[name])
+            }
+            */
+
+            console.log(people["Rokasu"])
+
+            function AddPerson(peoples, person) {
+                peoples[person.Name] = person
+            }
+
+            peoples = [
+                MakePerson("Rokasu", 32, 9000000000),
+                MakePerson("Nanori", 8, 14),
+                MakePerson("Pepsi", 1.2, -400),
+                MakePerson("Jesus", 1300000, 0),
+            ]
+
+            function MakePersonMap(peoples) {
+                var people = {}
+                for (var index = 0; index < peoples.length; index ++) {
+                    var person = peoples[index]
+                    people[person.Name] = person
+                    console.log('MakePersonMap', person.Name)
+                }
+
+                return people
+            }
+
+            var people2 = MakePersonMap(peoples)
+            for (var name in people2) {
+                console.log(name)
+                console.log(people2[name])
+            }
+
+            //console.log(people["Rokasu"])
+        </script>
+    </head>
+</html>

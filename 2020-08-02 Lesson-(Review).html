@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <style>
+            #primary {
+                width:80%;
+                margin-top:5%;
+                margin-left:auto;
+                margin-right:auto;
+                background-color: grey;
+            }
+
+            table.td {
+                border: 1px solid black
+            }
+        </style>
+        <script>
+            var username = 'Nanori'
+
+            function textEnter(event, caller) {
+                // event.which != 13 //Firefox
+                // event.keyCode != 13 Chrome
+
+                // a TRUE
+                // b TRUE
+                // c TRUE
+                // l TRUE
+                // CR/Enter FALSE
+                if (event.which != 13 && event.keyCode != 13) {
+                    return
+                }
+
+                console.log(caller.value)
+
+                var chatbox = document.getElementById("chatbox")
+                var div = document.createElement('div')
+                div.innerHTML = username + ': ' + caller.value
+                caller.value = ""
+
+                chatbox.appendChild(div)
+            }
+
+            function textEnterInverseIf(event, caller) {
+                // AND = &&
+                // && = Both sides have to be true
+                
+                // OR = ||
+                // || = Only one side has to be true
+                // a FALSE
+                // b FALSE
+                // c FALSE
+                // l FALSE
+                if (event.which == 13 || event.keyCode == 13) {
+                    console.log(caller.value)
+
+                    var chatbox = document.getElementById("chatbox")
+                    var div = document.createElement('div')
+                    div.innerHTML = username + ': ' + caller.value
+                    caller.value = ""
+
+                    chatbox.appendChild(div)
+                }
+            }
+
+            function Test(caller) {
+                console.log(caller.innerHTML)
+                /*for (var propertyName in caller) {
+                    console.log(propertyName, "=>", caller[propertyName])
+                }*/
+            }
+        </script>
+    </head>
+    <body style="background-color:#26657c;">
+        <div id ="primary">
+            <span id="chatbox"><div>Your messages here</div></span>
+            <div style="background-color: #26657c"><br></div>
+            <input type="text" style="width:100%" onkeypress="textEnter(event, this)">
+        </div>
+        <br>
+        <button onclick="Test(this)">Hi</button>
+        <button onclick="Test(this)">my</button>
+        <button onclick="Test(this)">name</button>
+        <button onclick="Test(this)">is</button>
+        <button onclick="Test(this)">Nanori</button>
+        <br>
+        <button onclick="Test(this)">Hello</button>
+        <button onclick="Test(this)">Rokas</button>
+        <button onclick="Test(this)">is</button>
+        <button onclick="Test(this)">my</button>
+        <button onclick="Test(this)">bitch</button>
+    </body>
+</html>
